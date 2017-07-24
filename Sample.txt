@@ -4,6 +4,7 @@ Resource          ../MaharTestProject/Login/GmailUI.txt
 
 *** Test Cases ***
 LogintoGmail
+    #Keyword for Login
     CommonBrowser    ${EURL}    ${BROWSER}
     Maximize Browser Window
     Capture Page Screenshot
