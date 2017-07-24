@@ -1,0 +1,45 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../MaharTestProject/Login/GmailUI.txt
+
+*** Test Cases ***
+LogintoGmail
+    CommonBrowser    ${EURL}    ${BROWSER}
+    Maximize Browser Window
+    Capture Page Screenshot
+    #LogintoGmail
+    Logintoaccount
+    #ComposeEmail
+    Sleep    70s
+    ${Val}=    Get Title
+    Select Window    ${Val}
+    #Wait Until Page Contains Element    //div/div[contains(text(), 'COMPOSE')]    10s
+    Click Element    //div/div[contains(text(), 'COMPOSE')]
+    Capture Page Screenshot
+    Wait Until Element Is Visible    ${NewMessage}    5s
+    Input text    ${EmailId}    hitogopi@gmail.com
+    Sleep    5s
+    Input text    ${Subject}    TestEmail
+    Sleep    5s
+    Click Element    ${Email description}
+    Input text    ${Email description}    Hi to dad
+    Capture Page Screenshot
+    Sleep    5s
+    Click Element    ${Send}
+    Sleep    5s
+    ${cookies}=    Get cookies
+    ${Location}=    Get Location
+    Close Browser
+
+*** Keywords ***
+CommonBrowser
+    [Arguments]    ${URL}    ${BrowserName}
+    Open Browser    ${URL}    ${BrowserName}
+
+Logintoaccount
+    Wait Until Element Is Visible    ${NextButton xpath}    30s
+    Input Text    ${LoginUserName xpath}    hitogopi@gmail.com
+    Click Element    ${NextButton xpath}
+    Wait Until Element Is Visible    ${SignIn xpath}    30s
+    Input Text    ${LoginPassword id}    Riya0901
+    Click Element    ${SignIn xpath}
