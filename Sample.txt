@@ -14,7 +14,6 @@ LogintoGmail
     Sleep    70s
     ${Val}=    Get Title
     Select Window    ${Val}
-    #Wait Until Page Contains Element    //div/div[contains(text(), 'COMPOSE')]    10s
     Click Element    //div/div[contains(text(), 'COMPOSE')]
     Capture Page Screenshot
     Wait Until Element Is Visible    ${NewMessage}    5s
