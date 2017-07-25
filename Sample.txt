@@ -9,27 +9,27 @@ LogintoGmail
     Maximize Browser Window
     Capture Page Screenshot
     #LogintoGmail
-    Logintoaccount
+    #Logintoaccount
     #ComposeEmail
-    Sleep    70s
-    ${Val}=    Get Title
-    Select Window    ${Val}
-    Click Element    //div/div[contains(text(), 'COMPOSE')]
-    Capture Page Screenshot
-    Wait Until Element Is Visible    ${NewMessage}    5s
-    Input text    ${EmailId}    hitogopi@gmail.com
-    Sleep    5s
-    Input text    ${Subject}    TestEmail
-    Sleep    5s
-    Click Element    ${Email description}
-    Input text    ${Email description}    Hi to dad
-    Capture Page Screenshot
-    Sleep    5s
-    Click Element    ${Send}
-    Sleep    5s
-    ${cookies}=    Get cookies
-    ${Location}=    Get Location
-    Close Browser
+    #Sleep    70s
+    #${Val}=    Get Title
+    #Select Window    ${Val}
+    #Click Element    //div/div[contains(text(), 'COMPOSE')]
+    #Capture Page Screenshot
+    #Wait Until Element Is Visible    ${NewMessage}    5s
+    #Input text    ${EmailId}    hitogopi@gmail.com
+    #Sleep    5s
+    #Input text    ${Subject}    TestEmail
+    #Sleep    5s
+    #Click Element    ${Email description}
+    #Input text    ${Email description}    Hi to dad
+    #Capture Page Screenshot
+    #Sleep    5s
+    #Click Element    ${Send}
+    #Sleep    5s
+    #${cookies}=    Get cookies
+    #${Location}=    Get Location
+    #Close Browser
 
 *** Keywords ***
 CommonBrowser
